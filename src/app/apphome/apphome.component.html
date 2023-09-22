@@ -1,0 +1,173 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="home" style="padding-left: 50px;">
+            <img src="../../assets/images/TSC_Logo.png" alt="Logo" width="200" height="auto" class="d-inline-block align-text-top">
+        </a>
+        <span class="navbar-text">
+        </span>
+        <span class="navbar-text">
+        </span>
+        <span class="navbar-text">
+        </span>
+        <span class="navbar-text">
+        </span>
+        <span class="navbar-text">
+            <div (click)="navigateToHome()" style="cursor: pointer;">Navigator Dashboard</div>
+        </span>
+        <span class="navbar-text">
+            <div (click)="navigateToReg()" style="cursor: pointer;">Case Registration</div>
+        </span>
+        <span class="navbar-text">Service Providers
+        </span>
+        <span class="navbar-text">
+            
+        </span>
+        <span class="navbar-text">
+            Welcome, San Anandakumar!
+            <button type="button" class="btn btn-dark" style="margin-left:10px" (click)="navigateToLogin()">Logout</button>
+        </span>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row" style="padding: 30px;">
+        <div class="col-lg-4" style="padding: 20px;text-align: center;">
+            <h3 style="color: white;padding-bottom: 15px">Housing & Accommodation Statistics</h3>
+            <!-- <div echarts [options]="chartOption" class="demo-chart"></div> -->
+            <div echarts [options]="pieOption1" [theme]="theme" class="demo-chart"></div>
+        </div>
+        <div class="col-lg-4" style="padding: 20px;text-align: center;">
+            <h3 style="color: white;padding-bottom: 15px">Collaborated Care Providers</h3>
+            <div echarts [options]="barchartOption" class="demo-chart"></div>
+        </div>
+        <div class="col-lg-4" style="padding: 20px;padding-bottom:0px;text-align: center;">
+            <h3 style="color: white;padding-bottom: 15px">Training & Job Placement</h3>
+            <div echarts [options]="pieOption2" class="demo-chart"></div>
+        </div>
+    </div>
+    <div class="row" style="padding: 30px;padding-top:5px">
+        <div class="col-lg-12" style="padding: 20px;padding-top:0px;">
+            <h3 style="color: white;padding-bottom: 15px">Current Waitlist</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Case ID</th>
+                        <th scope="col">Social Security</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Need Perm Housing</th>
+                        <th scope="col">Need Healthcare</th>
+                        <th scope="col">Need Job Training</th>
+                        <th scope="col">Need Re-Hab</th>
+                        <th scope="col">Current Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">SPC08100</th>
+                        <th>898-22-6134</th>
+                        <th>Robin Peterson</th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
+                        </th>
+                        <th>Pending Assignment</th>
+                        <th><button type="button" class="btn btn-dark">Assign to me</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">SPC08109</th>
+                        <th>898-22-9999</th>
+                        <th>Sandra Bullock</th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
+                        </th>
+                        <th>
+                            <span *ngIf='assigned'>Pending Assignment</span>
+                            <span *ngIf='!assigned'>Navigator Assigned</span>
+                        </th>
+                        <th><button *ngIf='assigned' type="button" class="btn btn-dark" (click)="assignNavigator()">Assign to me</button>
+                            <span *ngIf='!assigned'>Assigned to San Anandakumar</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">SPC08110</th>
+                        <th>233-22-1234</th>
+                        <th>Katy Perry</th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
+                        </th>
+                        <th>Pending Assignment</th>
+                        <th><button type="button" class="btn btn-dark">Assign to me</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">SPC08101</th>
+                        <th>999-22-8134</th>
+                        <th>Samuel Jackson</th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked/>
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  checked/>
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
+                        </th>
+                        <th>Pending Assignment</th>
+                        <th><button type="button" class="btn btn-dark">Assign to me</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th scope="row">SPC08134</th>
+                        <th>898-22-3434</th>
+                        <th>Robin Williams</th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
+                        </th>
+                        <th>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  checked/>
+                        </th>
+                        <th>Pending Assignment</th>
+                        <th><button type="button" class="btn btn-dark">Assign to me</button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

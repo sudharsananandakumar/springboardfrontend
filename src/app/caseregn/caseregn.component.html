@@ -1,0 +1,104 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="home" style="padding-left: 50px;">
+            <img src="../../assets/images/TSC_Logo.png" alt="Logo" width="200" height="auto"
+                class="d-inline-block align-text-top">
+        </a>
+        <span class="navbar-text">
+        </span>
+        <span class="navbar-text">
+        </span>
+        <span class="navbar-text">
+        </span>
+        <span class="navbar-text">
+        </span>
+        <span class="navbar-text">
+            <div (click)="navigateToHome()" style="cursor: pointer;">Navigator Dashboard</div>
+        </span>
+        <span class="navbar-text">
+            <div (click)="navigateToReg()" style="cursor: pointer;">Case Registration</div>
+        </span>
+        <span class="navbar-text">Service Providers
+        </span>
+        <span class="navbar-text">
+
+        </span>
+        <span class="navbar-text">
+            Welcome, San Anandakumar!
+            <button type="button" class="btn btn-dark" style="margin-left:10px"
+                (click)="navigateToLogin()">Logout</button>
+        </span>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row" style="padding: 30px;padding-top:5px;color: #1776C0;">
+        <div class="col-lg-12" style="padding: 20px;padding-top:0px;">
+            <h4 style="color: white;padding: 15px">Register a case here!</h4>
+            <div class="alert alert-success" role="alert" *ngIf="success">
+                Case <b>#SPC089100</b> has been submitted sucessfully! Please proceed to assign a Navigator at the dashbord!
+            </div>
+            <div style="background-color: white;padding: 25px">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="SSNNum" class="form-label">Social Security Number</label><br />
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="SSNNum"
+                                    placeholder="Enter your Social Security Number" [value]="ssnNo" width="80%">
+                            </div>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-sm btn-dark" (click)="lookupData()">Lookup</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="fullName" class="form-label">Full Name</label><br />
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter your Full Name"
+                            [value]="fullName" width="80%">
+                    </div>
+                </div>
+                <div class="row" style="padding-top:20px">
+                    <div class="col-sm-6">
+                        <label for="fullName" class="form-label">Address Line 1</label><br />
+                        <input type="text" class="form-control" id="addr1" placeholder="Enter your last known address"
+                            [value]="registeredAddr" width="80%">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="fullName" class="form-label">Address Line 2</label><br />
+                        <input type="text" class="form-control" id="addr2" placeholder="Enter your last known address"
+                            [value]="registeredAddr2" width="80%">
+                    </div>
+                </div>
+                <div class="row" style="padding-top:20px">
+                    <div class="col-sm-12">
+                        <label for="SSNNum" class="form-label">Enter Case Description</label><br />
+                        <textarea class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:20px">
+                    <div class="col-sm-3">
+                        <label for="fullName" class="form-label">Need Health Services</label><br />
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="fullName" class="form-label">Need Skills Training</label><br />
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="fullName" class="form-label">Need Rehab Services</label><br />
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="fullName" class="form-label">Police Case History</label><br />
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                    </div>
+                </div>
+                <div class="row" style="padding-top:20px;text-align: right;">
+                    <div class="col-sm-12">
+                        <button class="btn btn-dark" (click)="submitCase()">Submit Case</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
