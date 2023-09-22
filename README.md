@@ -1,6 +1,11 @@
-# Springboardcollective
+# Springboardcollaborative
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+
+The project aims to proivde a vivid visualization of a centralized case management platoform for the Spring Board Collaborative.
+The Springboard Collaborative (TSC) is a statewide Delaware nonprofit building dignified dwellings and communities that foster well-being for Delawareans in greatest need (those experiencing homelessness, housing insecurity, economic hardship, etc.), concurrently connecting compromised populations with community resources to build a better life.
+
+The Minimum Viable Product (MVP) uses Angular, Bootstrap, HTML & CSS and built with RWD (Responsive Web Design) suitable for all devices such as Laptop, Tablets and Mobile Phones
 
 ## Development server
 
